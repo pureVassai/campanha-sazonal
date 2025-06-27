@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Protocolo Elevar</title>
+  <style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  body {
+    font-family: quicksand, sans-serif;
+    color: white;
+    background: radial-gradient(circle at center, rgba(50,50,50,0.2) 10%, rgba(20,20,20,0.95) 55%), 
+                url('img1.jpeg') no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box; 
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+  }
+  .container-form {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;  
+    margin-bottom: 5rem;
+  }
+  .container-form h2 {
+    text-align: left;
+  }
+
+  .span-exclusivo {
+    position: absolute;
+    top: 1rem;
+    justify-content: center;
+    background-color: #ff69b4;
+    color: white;
+    padding: 0.5rem 0.8rem;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 0.6rem;
+  }
+  .mockup-ebook {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    animation: pulse 4s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    0% {
+      transform: scale(1);
+    }
+    
+  }
+
+  img {
+    width: 100px;
+    height: auto;
+  }
+  h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: -1rem;
+    margin-top: 8rem;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+  }
+  strong {
+    animation: strong-color 2s infinite alternate;
+  }
+
+  @keyframes strong-color {
+    0% {
+      color: #fff;
+    }
+    100% {
+      color: #fad9cf;
+    }
+  }
+  h3 {
+    color:rgb(214, 175, 115);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  
+  .form {
+    margin-top: 10rem;
+    padding: 0.5rem;
+    margin-right: 18px;
+    width: 100%;
+  }
+  .button-form {
+    width: 200px;
+    margin-bottom: 55px;
+    margin-left: 87px;
+   animation: pulse-color 4s infinite;
+  }
+
+  @keyframes pulse-color {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(255, 105, 180, 0.5);
+    }
+    50% {
+      transform: scale(1.02);
+      box-shadow: 0 0 40px 20px rgba(255, 105, 180, 0.2);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(255, 105, 180, 0.5);
+    }
+  }
+
+  input, button{
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.4rem 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+  }
+  button {
+    background-color: #ff69b4;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  button:hover {
+    background-color: #ff85c1;
+  }
+  #status {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  @media (max-width: 400px) and (max-height: 800px) {
+
+  .container {
+    max-height: 100vh;
+    justify-content: space-between;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    line-height: 1.1;
+  }
+
+  h3 {
+    font-size: 0.8rem;
+    margin: -5rem 0 -5rem 1.5rem;
+  }
+
+  .container-form {
+    gap: 3rem;
+    margin-bottom: 1rem;
+    justify-content: space-around;
+  }
+
+  .form {
+    margin-top: 1rem;
+  }
+
+  input, button {
+    font-size: 0.7rem;
+    padding: 0.5rem;
+    margin: 0.2rem 0;
+  }
+
+  .button-form {
+    width: 50%;
+    margin-bottom: 1rem;
+  }
+
+  .mockup-ebook {
+    max-width: 120px;
+  }
+
+  .span-exclusivo {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
+    top: 0.5rem;
+  }
+
+
+}
+@media (min-width: 390px) and (max-width: 400px) and (min-height: 800px) and (max-height: 860px) {
+  .container {
+    justify-content: flex-start;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    min-height: auto;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .container-form {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .mockup-ebook {
+    max-width: 140px;
+  }
+
+  .form {
+    margin-top: 10rem;
+
+  }
+
+  input, button {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .button-form {
+    width: 50%;
+    margin: 1rem auto auto 6rem;
+  }
+
+  .span-exclusivo {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+ @media ((min-width: 401px) and (max-width: 450px) and (max-height: 900px)) {
+  .container {
+    max-height: 100vh;
+    justify-content: space-between;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    margin: -3em 0 -2rem 1.5rem;
+  }
+
+  .container-form {
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+
+  .form {
+    margin-top: 1rem;
+    padding: 0;
+  }
+
+  input, button {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+    margin: 0.3rem 0;
+  }
+
+  .button-form {
+    width: 50%;
+    margin: 1rem auto 0 6.3rem;
+  }
+
+  .mockup-ebook {
+    max-width: 140px;
+  }
+
+  .span-exclusivo {
+    font-size: 0.6rem;
+    padding: 0.4rem 0.7rem;
+    top: 0.5rem;
+  }
+
+  #status {
+    font-size: 0.8rem;
+  }
+ }
+
+@media (min-width: 451px) and (max-width: 500px) {
+  h1 { font-size: 2.1rem; }
+  h2 { font-size: 1.3rem; }
+  h3 { font-size: 1.1rem; }
+  input, button { font-size: 1.1rem; }
+  .button-form { width: 50%;
+    margin: 1rem auto auto 6rem; }
+  .mockup-ebook { max-width: 130px; }
+}
+ @media ((min-width: 700px) and (max-width: 800px) and (max-height: 1000px)) {
+  .container {
+    max-height: 100vh;
+    max-width: 650px;
+    justify-content: space-between;
+    padding: 2rem 2rem;
+  }
+
+  h1 {
+    font-size: 2.3rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin: -2rem 0 0.5rem 1.5rem;
+  }
+
+  .container-form {
+    gap: 3rem;
+    margin-bottom: 1.5rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form {
+    margin-top: 1rem;
+    padding: 0;
+  }
+
+  input, button {
+    font-size: 1rem;
+    padding: 0.7rem;
+    margin: 0.4rem 0;
+  }
+
+  .button-form {
+    width: 50%;
+    margin: 1rem auto auto 9.5rem;
+  }
+
+  .mockup-ebook {
+    max-width: 180px;
+  }
+
+  .span-exclusivo {
+    font-size: 0.7rem;
+    padding: 0.5rem 1rem;
+    top: 0.7rem;
+  }
+
+  #status {
+    font-size: 0.85rem;
+  }
+ }
+ @media (min-width: 901px) and (max-width: 1100px) {
+  h1 { font-size: 2.8rem; }
+  h2 { font-size: 1.8rem; }
+  h3 { font-size: 1.4rem; }
+  input, button { font-size: 1.3rem; }
+  .button-form { width: 50%; }
+  .mockup-ebook { max-width: 170px; }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="span-exclusivo">EDIÇÃO LIMITADA!</span> 
+    <h1>Você se olha no espelho e não se reconhece mais?</h1>
+    <h3>82% das mulheres relatam queda na autoestima após o parto</h3>
+    <div class="container-form">
+      <h2>Cadastre-se e receba agora o <strong>eBook completo</strong> por <strong>tempo limitado!</strong></h2>
+      <img class="mockup-ebook" src="elemento-visual.png" alt="mockup ebook ELevar">
+    </div>
+
+    <form class="form" id="form">
+      <input type="text" name="nome" placeholder="Seu nome" required />
+      <input type="tel" name="numero" placeholder="Seu número" required />
+      <input type="tel" name="indicacao" placeholder="Indicação (número de outra mãe)" />
+      <input type="email" name="email" placeholder="Seu email para receber o eBook" required />
+      <button type="submit" class="button-form">Quero o eBook</button>
+    </form>
+  </div>
+  <script>
+    const form = document.getElementById('form');
+    const statusText = document.getElementById('status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusText.innerText = 'Enviando...';
+
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      try {
+        await fetch('https://hook.integromat.com/SEU-WEBHOOK-PARA-RECEPCAO', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            nome: data.nome,
+            numero: data.numero,
+            indicacao: data.indicacao
+          })
+        });
+
+        await fetch('https://hook.integromat.com/SEU-WEBHOOK-PARA-EMAIL', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: data.email,
+            nome: data.nome
+          })
+        });
+
+        form.reset();
+        statusText.innerText = 'Cadastro enviado com sucesso! Confira seu email.';
+      } catch (err) {
+        statusText.innerText = 'Erro ao enviar. Tente novamente mais tarde.';
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+</html>
