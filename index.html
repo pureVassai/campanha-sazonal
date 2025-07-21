@@ -212,7 +212,7 @@
         });
 
         form.reset();
-        statusText.innerText = 'Cadastro enviado com sucesso! Confira seu email.';
+            window.location.href = 'confirmado.html';
       } catch (err) {
         statusText.innerText = 'Erro ao enviar. Tente novamente mais tarde.';
         console.error(err);
