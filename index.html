@@ -193,22 +193,22 @@
 
       try {
         await fetch('https://hook.us2.make.com/42t14m4qlv3kfn7njfxnl4224fqjufk8', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            nome: data.nome,
-            numero: data.numero,
-            indicacao: data.indicacao
-          })
+         method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    nome: data.nome,
+    numero: data.numero,
+    indicacao: data.indicacao
+  })
         });
 
         await fetch('https://hook.us2.make.com/47y8zhi1u7yqevna2u7nlj2z3ihborhy', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: data.email,
-            nome: data.nome
-          })
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    email: data.email,
+    nome: data.nome
+  })
         });
 
         form.reset();
